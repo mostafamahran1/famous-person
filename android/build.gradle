@@ -1,0 +1,38 @@
+plugins {
+    id "com.android.application" version "8.1.0" apply false
+    id "org.jetbrains.kotlin.android" version "1.8.22" apply false
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.fcis_project"
+    compileSdk = 33  // أو يمكنك استخدام flutter.compileSdkVersion
+    ndkVersion = "21.3.6528147"  // استخدم إصدار NDK المناسب أو flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.fcis_project"
+        minSdk = 21  // أو يمكنك استخدام flutter.minSdkVersion
+        targetSdk = 33  // أو يمكنك استخدام flutter.targetSdkVersion
+        versionCode = 1  // أو يمكنك استخدام flutter.versionCode
+        versionName = "1.0.0"  // أو يمكنك استخدام flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
